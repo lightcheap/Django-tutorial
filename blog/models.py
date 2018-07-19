@@ -5,7 +5,7 @@ from django.utils import timezone
 # クラスオブジェクトの定義
 class Post(models.Model):
     # 他のモデルへのリンク
-    author = models.ForeignKey('auth.User',on_delete=models.CASCADE)
+    author = models.ForeignKey('auth.User',on_delete=models.CASCADE,)
     # テキスト数を定義するフィールド
     title = models.CharField(max_length=200)
     # 制限無しの長いテキスト用

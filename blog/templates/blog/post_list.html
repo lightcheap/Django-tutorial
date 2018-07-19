@@ -1,17 +1,12 @@
-<html>
-    <head>
-        <title>ジャンゴおためし</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href = "/">Django Girl Tutorial</a></h1>
+{% extends 'blog/base.html' %}
+{% block content %}
+{% for post in posts %}
+    <div class="post">
+        <div class="date">
+            {{ post.published_date }}
         </div>
-        <div>
-            <h2><a href="">Test Post1</a></h2>
-        </div>
-        <div>
-            <h2><a href="">Test Post2</a></h2>
-        </div>
-        
-    </body>
-</html>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}
+{% endblock content %}
